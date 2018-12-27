@@ -1,5 +1,3 @@
-package sijar.algods;
-
 import java.util.Arrays;
 
 public class Stack<E>{
