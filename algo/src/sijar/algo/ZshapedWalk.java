@@ -1,3 +1,5 @@
+package sijar.algo;
+
 /**
  * author : sijar
  */

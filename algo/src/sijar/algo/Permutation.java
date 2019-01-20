@@ -1,10 +1,12 @@
+package sijar.algo;
+
 public class Permutation {
 
         public static void main(String[] args)
         {
             String str = "ABC";
             //int n = str.length();
-            //Permutation permutation = new Permutation();
+            //sijar.algo.Permutation permutation = new sijar.algo.Permutation();
             //permutation.permute(str, 0, str.length()-1);
 
             Permutation.permutation(str,"");

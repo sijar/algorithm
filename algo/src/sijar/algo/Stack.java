@@ -1,3 +1,5 @@
+package sijar.algo;
+
 import java.util.Arrays;
 
 public class Stack<E>{
@@ -36,7 +38,7 @@ public class Stack<E>{
 
     @Override
     public String toString() {
-        return "Stack{" +
+        return "sijar.algo.Stack{" +
                 "top=" + top +
                 ", elements=" + Arrays.toString(elements) +
                 '}';
@@ -67,8 +69,8 @@ public class Stack<E>{
             stringStack.push("WOXA5");
         }
 
-        //System.out.println("Total Size of Stack" + stringStack.elements.length);
-        System.out.println("Currentl capacity of Stack :" + stringStack.top);
+        //System.out.println("Total Size of sijar.algo.Stack" + stringStack.elements.length);
+        System.out.println("Currentl capacity of sijar.algo.Stack :" + stringStack.top);
         //System.out.println(stringStack);
 
         for(;;) {

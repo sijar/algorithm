@@ -1,3 +1,5 @@
+package sijar.algo;
+
 import java.util.Arrays;
 
 public class DynamicStack<E> {
@@ -55,9 +57,9 @@ public class DynamicStack<E> {
 
 	@Override
     public String toString() {
-        return "Stack{" +
+        return "sijar.algo.Stack{" +
                 "top=" + top +
-                ", Stack Size=" + elements.length + 
+                ", sijar.algo.Stack Size=" + elements.length +
                 ", elements=" + Arrays.toString(elements) +
                 '}';
     }
@@ -65,6 +67,8 @@ public class DynamicStack<E> {
 	
 	public static void main(String[] args) {
         DynamicStack<String> stringStack = new DynamicStack<>()  ;
+        System.out.println("Hashcode :" +  stringStack.hashCode() +  " "+ (stringStack.hashCode() & 0x7fffffff)% 12);
+
         for(int k =0 ; k < 1 ; ++k) {
             stringStack.push("ABC");
             System.out.println(stringStack);
@@ -102,11 +106,12 @@ public class DynamicStack<E> {
             stringStack.pull();
             stringStack.pull();
             System.out.println(stringStack);
-        }
 
-        //System.out.println("Total Size of Stack" + stringStack.elements.length);
-        System.out.println("Currentl capacity of Stack :" + stringStack.top);
+        }
+        //System.out.println("Total Size of sijar.algo.Stack" + stringStack.elements.length);
+        System.out.println("Currentl capacity of sijar.algo.Stack :" + stringStack.top);
         //System.out.println(stringStack);
+
 	}
 
 

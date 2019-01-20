@@ -1,4 +1,4 @@
-
+package sijar.algo;
 /* Maximum subarray in a given array 
 /* solution to "Introduction to Algorithm" - Coreman
 /* Author - Sijar Ahmed
