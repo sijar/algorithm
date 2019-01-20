@@ -1,0 +1,6 @@
+*.xml
+*.iml
+.gitignore
+.DS_Store
+out/
+.idea/*.*
