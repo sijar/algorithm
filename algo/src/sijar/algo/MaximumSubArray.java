@@ -1,8 +1,19 @@
-package sijar.algo;
-/* Maximum subarray in a given array 
+
+/* Maximum subarray in a given array
 /* solution to "Introduction to Algorithm" - Coreman
-/* Author - Sijar Ahmed
-*/
+ * Developed by Sijar Ahmed on 28/1/19 5:34 PM
+ * Last modified 28/1/19 5:34 PM.
+ * Sijar Ahmed (sijar.ahmed@gmail.com)
+ * Copyright (c) 2019. All rights reserved.
+ *
+ *
+ * The Class / Interface MaximumSubArray is responsible for...
+ * @author sijarahmed
+ * 28/1/19 5:34 PM
+ *
+ */
+package sijar.algo;
+
 
 public class MaximumSubArray {
 

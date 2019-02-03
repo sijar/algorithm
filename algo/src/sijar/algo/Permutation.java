@@ -1,5 +1,17 @@
 package sijar.algo;
 
+/*
+ * Developed by Sijar Ahmed on 28/1/19 5:34 PM
+ * Last modified 28/1/19 5:34 PM.
+ * Sijar Ahmed (sijar.ahmed@gmail.com)
+ * Copyright (c) 2019. All rights reserved.
+ *
+ *
+ * The Class / Interface Permutation is responsible for...
+ * @author sijarahmed
+ * 28/1/19 5:34 PM
+ *
+ */
 public class Permutation {
 
         public static void main(String[] args)

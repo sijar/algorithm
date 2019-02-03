@@ -1,7 +1,21 @@
+/*
+ * Developed by Sijar Ahmed on 28/1/19 5:34 PM
+ * Last modified 28/1/19 5:34 PM.
+ * Sijar Ahmed (sijar.ahmed@gmail.com)
+ * Copyright (c) 2019. All rights reserved.
+ *
+ *
+ * The Class / Interface MultiDimensionArrays is responsible for...
+ * @author sijarahmed
+ * 28/1/19 5:34 PM
+ *
+ */
+
 package sijar.algo;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+
 
 /**
  * author sijar ahmed
@@ -10,28 +24,30 @@ import java.util.Arrays;
  */
 public class HashSeparateChaining<K,V> {
 
-	private int INITIAL_CAPACITY = 10;
-	private HashNode<K,V>[] bucket = (HashNode<K, V>[]) Array.newInstance(HashNode.class,INITIAL_CAPACITY);
-	private int no_of_keys;
+	private int INITIAL_CAPACITY = 9;
+	private HashNode<Integer,V>[] bucket = (HashNode<Integer, V>[]) Array.newInstance(HashNode.class,INITIAL_CAPACITY);
 
 	@Override
 	public String toString() {
-		return "HashSeparateChaining{" +
-				"bucket=" + Arrays.toString(bucket) +
-				'}';
+		return Arrays.toString(bucket);
 	}
-//public boolean  equals(K o) {}
-	//public int      hashCode() {}
 
 	public int size() {
-		return no_of_keys;
+		int _count=0;
+		Integer[] _keys = keySet();
+		for(int i=0; i< _keys.length; ++i){
+			if(_keys[i]!= null){
+				++_count;
+			}
+		}
+		return _count;
 	}
 
 	public boolean isEmpty() {
-		return (no_of_keys==0)?true:false;
+		return (size()==0)?true:false;
 	}
 
-	public boolean containsKey(K key) {
+	public boolean containsKey(Integer key) {
 		return false;
 	}
 
@@ -39,22 +55,22 @@ public class HashSeparateChaining<K,V> {
 		return false;
 	}
 
-	public K get(K key) {
-		return null;
+	public V get(Integer key) {
+		int index = key.hashCode() % bucket.length; //Note:- hashcode is RAM memory address if not overriden
+		return bucket[Math.abs(index-1)].get(key);
 	}
 
-	public K put(K key, V value) {
-		int slab = key.hashCode() % bucket.length; //Note:- hashcode is RAM memory address if not overriden
-		//System.out.println("HashValue= "+ key.hashCode());
-		System.out.println("Hash code=" + (slab-1) + " for key=" + key);
-		if(bucket[slab-1] == null){
-			bucket[slab-1] = new HashNode<>();
+	public Integer put(Integer key, V value) {
+		int index = key.hashCode() % bucket.length;
+		System.out.println("KEY=" + key + ", Hashcode=" + Math.abs(index-1));
+		if(bucket[Math.abs(index-1)] == null){
+			bucket[Math.abs(index-1)] = new HashNode<>();
 		}
-		bucket[slab-1].put(key,value);
+		bucket[Math.abs(index-1)].put(key,value);
 		return key;
 	}
 
-	public K remove(K key) {
+	public Integer remove(Integer key) {
 		return null;
 	}
 
@@ -63,36 +79,50 @@ public class HashSeparateChaining<K,V> {
 
 	}
 
-	/*public Set keySet() {
-		Set keyset = new LinkedHashSet();
-		for(K k : bucket){
-			keyset.add(k);
+	public Integer[] keySet() {
+		Integer[] _keys = new Integer[INITIAL_CAPACITY];
+		for(int i=0,j=0; i<bucket.length; ++i,++j){
+			if(bucket[i] != null && bucket[i].getKey() != null){
+				_keys[j] = bucket[i].getKey();
+			}
 		}
-		return keyset;
+		return  _keys;
 	}
-	public Collection values() {
-		return null;
-	}
-	*/
+
 
 
 	public static void main(String[] args) {
-		HashSeparateChaining<Integer,String> map = new HashSeparateChaining<>();
-		//System.out.println(map);
+	HashSeparateChaining<Integer,String> map = new HashSeparateChaining<>();
+		map.put(Integer.valueOf(122),"bigbang");
+		map.put(Integer.valueOf(36),"sheldon");
+		map.put(Integer.valueOf(204),"ship");
+		map.put(Integer.valueOf(395),"alibaba");
+		map.put(Integer.valueOf(486),"lord");
+		map.put(Integer.valueOf(577),"jabber");
+		map.put(Integer.valueOf(668),"circus");
+		map.put(Integer.valueOf(759),"guitar");
+		map.put(Integer.valueOf(201),"Gstring");
+		map.put(Integer.valueOf(18),"cricket");
+		map.put(Integer.valueOf(798),"willow");
 
-		map.put(123,"sijar");
-		map.put(113,"tanzeem");
-		map.put(203,"ship");
-		map.put(393,"ali");
-		map.put(483,"lord");
-		map.put(573,"jabber");
-		map.put(663,"circus");
-		map.put(753,"guitar");
-		map.put(201,"madhu");
-		map.put(15,"gopal");
-		map.put(7,"utpal");
+		System.out.println("--------------------");
 		System.out.println(map);
+		System.out.println("--------------------");
 
+		System.out.println("NO. OF KEYS=" + map.size());
+		System.out.println("--------------------");
+		Integer[] key_sets = map.keySet();
+		for(int i=0; i<key_sets.length;++i){
+		    if(key_sets[i] != null) {
+				System.out.println("KEY=" + key_sets[i] + "\b VALUE=" + map.get(key_sets[i]));
+			}
+		}
+
+		System.out.println("\nRetrieving value for keys with collison...");
+		Integer[] _collided_keys = new Integer[]{486,668,201,18,798};
+		for (Integer collided_key : _collided_keys) {
+			System.out.println("KEY=" + collided_key + "\b VALUE=" + map.get(collided_key));
+		}
 	}
 
 
@@ -101,27 +131,38 @@ public class HashSeparateChaining<K,V> {
 
 /**
  *
- * @param <K>
+ * @param <Integer>
  * @param <V>
  */
-class HashNode<K,V> {
+class HashNode<Integer,V> {
 
-	private LinkedListNode<K, V> head;
+	private LinkedListNode<Integer, V> head;
 	/**
 	 * @param key
 	 * @return
 	 */
-	public V get(K key) {
-		return null;
+	public V get(Integer key) {
+	    //if(key == null) return null;
+		LinkedListNode<Integer,V> current = head;
+		while(!current.key.equals(key) && current.link!=null){
+			current = current.link;
+		}
+		return current.value;
 	}
+
+	public Integer getKey(){
+		return head.key;
+	}
+
+
 	/**
 	 * @param key
 	 * @param value
 	 * @return
 	 */
-	public K put(K key, V value) {
+	public Integer put(Integer key, V value) {
 		if (head != null) {
-			LinkedListNode<K, V> current = head;
+			LinkedListNode<Integer, V> current = head;
 			for (; current.link != null; current = current.link) {
 			}
 			current.link = new LinkedListNode<>(key, value, null);
@@ -130,29 +171,27 @@ class HashNode<K,V> {
 		}
 		return key;
 	}
-	public V remove(K key) {
+	public V remove(Integer key) {
 		return null;
 	}
 
 	@Override
 	public String toString() {
-		return "{" +
-				"head=" + head +
-				" " + head.printAllLinks();
+		return head.printAllLinks();
 
 	}
 
 	/**
 	 *
-	 * @param <K>
+	 * @param <Integer>
 	 * @param <V>
 	 */
-	private class LinkedListNode<K, V> {
-		private LinkedListNode<K, V> link;
-		private K key;
+	private class LinkedListNode<Integer, V> {
+		private LinkedListNode<Integer, V> link;
+		private Integer key;
 		private V value;
 
-		public LinkedListNode(K key, V value, LinkedListNode<K, V> link) {
+		public LinkedListNode(Integer key, V value, LinkedListNode<Integer, V> link) {
 			this.link = link;
 			this.key = key;
 			this.value = value;
@@ -172,6 +211,7 @@ class HashNode<K,V> {
 			for (LinkedListNode current = this; current != null; current = current.link) {
 				sb.append(current);
 			}
+			sb.append("\n");
 			return sb.toString();
 			}
 		}

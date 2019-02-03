@@ -1,3 +1,15 @@
+/*
+ * Developed by Sijar Ahmed on 28/1/19 5:34 PM
+ * Last modified 28/1/19 5:34 PM.
+ * Sijar Ahmed (sijar.ahmed@gmail.com)
+ * Copyright (c) 2019. All rights reserved.
+ *
+ *
+ * The Class / Interface ZshapedWalk is responsible for...
+ * @author sijarahmed
+ * 28/1/19 5:34 PM
+ *
+ */
 package sijar.algo;
 
 /**
