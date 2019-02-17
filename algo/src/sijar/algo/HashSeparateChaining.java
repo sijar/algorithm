@@ -1,13 +1,13 @@
 /*
- * Developed by Sijar Ahmed on 28/1/19 5:34 PM
- * Last modified 28/1/19 5:34 PM.
+ * Developed by Sijar Ahmed on 18/2/19 12:53 AM
+ * Last modified 12/2/19 12:12 AM.
  * Sijar Ahmed (sijar.ahmed@gmail.com)
  * Copyright (c) 2019. All rights reserved.
  *
  *
- * The Class / Interface MultiDimensionArrays is responsible for...
+ * The Class / Interface HashSeparateChaining is responsible for...
  * @author sijarahmed
- * 28/1/19 5:34 PM
+ * 18/2/19 12:53 AM
  *
  */
 
@@ -56,12 +56,22 @@ public class HashSeparateChaining<K,V> {
 	}
 
 	public V get(Integer key) {
-		int index = key.hashCode() % bucket.length; //Note:- hashcode is RAM memory address if not overriden
+		int index = UniversalHashfunction(key,bucket.length);
 		return bucket[Math.abs(index-1)].get(key);
 	}
 
+	private int UniversalHashfunction(Integer key, int length) {
+		int index = key.hashCode() % bucket.length; //modulo hash function
+		return index;
+	}
+
+
+
+
 	public Integer put(Integer key, V value) {
-		int index = key.hashCode() % bucket.length;
+
+		//int index = key.hashCode() % bucket.length; //modulo hash function
+		int index = UniversalHashfunction(key,bucket.length);
 		System.out.println("KEY=" + key + ", Hashcode=" + Math.abs(index-1));
 		if(bucket[Math.abs(index-1)] == null){
 			bucket[Math.abs(index-1)] = new HashNode<>();
@@ -76,7 +86,6 @@ public class HashSeparateChaining<K,V> {
 
 
 	public void clear() {
-
 	}
 
 	public Integer[] keySet() {
@@ -215,6 +224,14 @@ class HashNode<Integer,V> {
 			return sb.toString();
 			}
 		}
-	}
+
+
+		int remove(int Key, V value){
+			throw new UnsupportedOperationException("to be implemented");
+		}
+
+
+
+}
 
 

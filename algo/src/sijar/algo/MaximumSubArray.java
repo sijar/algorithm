@@ -1,15 +1,14 @@
 
-/* Maximum subarray in a given array
-/* solution to "Introduction to Algorithm" - Coreman
- * Developed by Sijar Ahmed on 28/1/19 5:34 PM
- * Last modified 28/1/19 5:34 PM.
+/*
+ * Developed by Sijar Ahmed on 18/2/19 12:53 AM
+ * Last modified 6/2/19 11:22 PM.
  * Sijar Ahmed (sijar.ahmed@gmail.com)
  * Copyright (c) 2019. All rights reserved.
  *
  *
  * The Class / Interface MaximumSubArray is responsible for...
  * @author sijarahmed
- * 28/1/19 5:34 PM
+ * 18/2/19 12:53 AM
  *
  */
 package sijar.algo;
@@ -52,11 +51,11 @@ private static int max3(int a, int b, int c) {
 
 public static void main(String[] args) {
     //INPUT
-    int a[] = {
-        -5, 71, 23, 41, 34, 1, 3, 6, 2, 91, 312, 42, 31, 67, 12, 10, 18, 56, 90, 21, 45, 47, 89, 1999999990,
-        78, -7, 76, 75, 74, 73, 72, 80, 24, 25, 61, 69, 84, 0, -1, 145, 1902, 200, 199, 198, 197, 196, 195, 194,
-        78, 77, 76, 75, 74, 73, 72, 80, 24, 25, 61, 69, 84, 0, -1, 145, 1902, 200, 199, 198, 197, 196, 195, 194,
-        5, 71, 23, 41, 34, 1, 3, 6, 2, 91, 312, 42, 31, 67, 12, 10, 18, 56, 90, 21, 45, 47, 89, 1999999990
+    int[] a = {
+            -5, 71, 23, 41, 34, 1, 3, 6, 2, 91, 312, 42, 31, 67, 12, 10, 18, 56, 90, 21, 45, 47, 89, 1999999990,
+            78, -7, 76, 75, 74, 73, 72, 80, 24, 25, 61, 69, 84, 0, -1, 145, 1902, 200, 199, 198, 197, 196, 195, 194,
+            78, 77, 76, 75, 74, 73, 72, 80, 24, 25, 61, 69, 84, 0, -1, 145, 1902, 200, 199, 198, 197, 196, 195, 194,
+            5, 71, 23, 41, 34, 1, 3, 6, 2, 91, 312, 42, 31, 67, 12, 10, 18, 56, 90, 21, 45, 47, 89, 1999999990
     };
 
     int maxSum = maxSumRec(a, 0, a.length - 1);

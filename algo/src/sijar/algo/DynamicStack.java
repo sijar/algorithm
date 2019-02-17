@@ -1,13 +1,13 @@
 /*
- * Developed by Sijar Ahmed on 28/1/19 5:34 PM
- * Last modified 28/1/19 5:34 PM.
+ * Developed by Sijar Ahmed on 18/2/19 12:53 AM
+ * Last modified 8/2/19 4:19 PM.
  * Sijar Ahmed (sijar.ahmed@gmail.com)
  * Copyright (c) 2019. All rights reserved.
  *
  *
  * The Class / Interface DynamicStack is responsible for...
  * @author sijarahmed
- * 28/1/19 5:34 PM
+ * 18/2/19 12:53 AM
  *
  */
 
@@ -70,9 +70,9 @@ public class DynamicStack<E> {
 
 	@Override
     public String toString() {
-        return "sijar.algo.Stack{" +
+        return "sijar.algo.SimpleStack{" +
                 "top=" + top +
-                ", sijar.algo.Stack Size=" + elements.length +
+                ", sijar.algo.SimpleStack Size=" + elements.length +
                 ", elements=" + Arrays.toString(elements) +
                 '}';
     }
@@ -121,8 +121,8 @@ public class DynamicStack<E> {
             System.out.println(stringStack);
 
         }
-        //System.out.println("Total Size of sijar.algo.Stack" + stringStack.elements.length);
-        System.out.println("Currentl capacity of sijar.algo.Stack :" + stringStack.top);
+        //System.out.println("Total Size of sijar.algo.SimpleStack" + stringStack.elements.length);
+        System.out.println("Currentl capacity of sijar.algo.SimpleStack :" + stringStack.top);
         //System.out.println(stringStack);
 
 	}
