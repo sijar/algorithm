@@ -11,23 +11,43 @@ public class MyQueue {
     //Queue queue = new ArrayBlockingQueue(40);
     //Queue<Character> queue = new DelayQueue<>();
     //Queue queue = new LinkedTransferQueue();
-    Queue queue = new ConcurrentLinkedDeque();
+    private Queue queue = new ConcurrentLinkedDeque();
 //    Queue queue = new ArrayDeque();
 //    Queue queue = new ArrayDeque();
 //    Queue queue = new ArrayDeque();
-
     //Queue queue = new SynchronousQueue();
+
+
+    /**
+     *
+     */
+    void serviceAndPeek(){
+        while(!queue.isEmpty()){
+            System.out.println("Servicing the item << " +  queue.peek() + " >>");
+            Object servered_item =  queue.poll();
+            System.out.println("Item is been servered {{ " +  servered_item + " }}");
+            System.out.println(queue + "\n");
+        }
+    }
 
 
 
     public static void main(String[] args) {
         String _infix = "a+b-c*(d/e)";
         String _polynomial = "a*x*x + b*x + c";
+        String[] agents = "abc,def,ghi,jkl,mno,pqr,stu,vwx,yz1".split(",");
+
+                //MyQueue _queueObj = new MyQueue();
+        //doAllQueueOperations(_infix, _queueObj);
+        //doAllQueueOperations(_polynomial,_queueObj);
 
         MyQueue _queueObj = new MyQueue();
-        doAllQueueOperations(_infix, _queueObj);
-        doAllQueueOperations(_polynomial,_queueObj);
-
+        //push
+        for(int i=0; i<agents.length; ++i){
+            System.out.println("Item added into the queue : " + agents[i]);
+            _queueObj.queue.add(agents[i]);
+        }
+        _queueObj.serviceAndPeek();
     }
 
 
@@ -67,5 +87,8 @@ public class MyQueue {
         System.out.println("=============================================");
         System.out.println(_queueObj.queue);
     }
+
+
+
 
 }
