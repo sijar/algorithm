@@ -1,7 +1,0 @@
-*.xml
-*.iml
-.gitignore
-.DS_Store
-out/
-.idea/*.*
-./idea/libraries/*.*
