@@ -1,17 +1,17 @@
 /*
- * Developed by Sijar Ahmed on 6/2/19 6:52 PM
- * Last modified 6/2/19 6:52 PM.
+ * Developed by Sijar Ahmed on 27/05/22, 7:06 PM
+ * Last modified 06/02/19, 10:24 PM.
  * Sijar Ahmed (sijar.ahmed@gmail.com)
- * Copyright (c) 2019. All rights reserved.
+ * Copyright (c) 2022. All rights reserved.
  *
  *
  * The Class / Interface NthDifferenceWords is responsible for...
  * @author sijarahmed
- * 6/2/19 6:52 PM
+ * 27/05/22, 7:06 PM
  *
  */
 
-package sijar.algo;
+package ctci;
 
 import java.util.ArrayList;
 import java.util.HashMap;

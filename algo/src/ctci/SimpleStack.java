@@ -1,17 +1,17 @@
 /*
- * Developed by Sijar Ahmed on 18/2/19 12:53 AM
- * Last modified 8/2/19 4:19 PM.
+ * Developed by Sijar Ahmed on 27/05/22, 7:06 PM
+ * Last modified 18/02/19, 12:53 AM.
  * Sijar Ahmed (sijar.ahmed@gmail.com)
- * Copyright (c) 2019. All rights reserved.
+ * Copyright (c) 2022. All rights reserved.
  *
  *
  * The Class / Interface SimpleStack is responsible for...
  * @author sijarahmed
- * 18/2/19 12:53 AM
+ * 27/05/22, 7:06 PM
  *
  */
 
-package sijar.algo;
+package ctci;
 
 import java.util.Arrays;
 
@@ -51,7 +51,7 @@ public class SimpleStack<E>{
 
     @Override
     public String toString() {
-        return "sijar.algo.SimpleStack{" +
+        return "ctci.SimpleStack{" +
                 "top=" + top +
                 ", elements=" + Arrays.toString(elements) +
                 '}';
@@ -82,8 +82,8 @@ public class SimpleStack<E>{
             stringStack.push("WOXA5");
         }
 
-        //System.out.println("Total Size of sijar.algo.SimpleStack" + stringStack.elements.length);
-        System.out.println("Currentl capacity of sijar.algo.SimpleStack :" + stringStack.top);
+        //System.out.println("Total Size of ctci.SimpleStack" + stringStack.elements.length);
+        System.out.println("Currentl capacity of ctci.SimpleStack :" + stringStack.top);
         //System.out.println(stringStack);
 
         for(;;) {

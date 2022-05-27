@@ -1,17 +1,17 @@
 /*
- * Developed by Sijar Ahmed on 18/2/19 12:53 AM
- * Last modified 12/2/19 12:12 AM.
+ * Developed by Sijar Ahmed on 27/05/22, 7:05 PM
+ * Last modified 18/02/19, 12:53 AM.
  * Sijar Ahmed (sijar.ahmed@gmail.com)
- * Copyright (c) 2019. All rights reserved.
+ * Copyright (c) 2022. All rights reserved.
  *
  *
  * The Class / Interface HashSeparateChaining is responsible for...
  * @author sijarahmed
- * 18/2/19 12:53 AM
+ * 27/05/22, 7:05 PM
  *
  */
 
-package sijar.algo;
+package ctci;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;

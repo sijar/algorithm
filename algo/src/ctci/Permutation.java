@@ -1,24 +1,25 @@
-package sijar.algo;
-
 /*
- * Developed by Sijar Ahmed on 28/1/19 5:34 PM
- * Last modified 28/1/19 5:34 PM.
+ * Developed by Sijar Ahmed on 27/05/22, 7:06 PM
+ * Last modified 03/02/19, 5:50 PM.
  * Sijar Ahmed (sijar.ahmed@gmail.com)
- * Copyright (c) 2019. All rights reserved.
+ * Copyright (c) 2022. All rights reserved.
  *
  *
  * The Class / Interface Permutation is responsible for...
  * @author sijarahmed
- * 28/1/19 5:34 PM
+ * 27/05/22, 7:06 PM
  *
  */
+
+package ctci;
+
 public class Permutation {
 
         public static void main(String[] args)
         {
             String str = "ABC";
             //int n = str.length();
-            //sijar.algo.Permutation permutation = new sijar.algo.Permutation();
+            //ctci.Permutation permutation = new ctci.Permutation();
             //permutation.permute(str, 0, str.length()-1);
 
             Permutation.permutation(str,"");
